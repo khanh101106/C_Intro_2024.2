@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <math.h>
+#define FOR(i,l,r) for (int i=l;i<=r;i++)
+#define FOD(i,r,l) for (int i=r;i>=l;i--)
+#define faster ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
+#define vt vector
+#define ll long long
+#define pb push_back
+#define ii pair<int,int>
+#define mp make_pair
+#define fi first
+#define se second
+#define all(a) (a).begin(), (a).end()
+#define sz(a) (int)(a.size()) 
+//#define maxn 10000000
+int Pow(int n,int k){
+	int a = 1;
+	FOR(i,1,k)
+		a *= n;
+	return a;
+}
+int main(){
+	int t;
+	scanf("%d",&t);
+	while(t--){
+		int n;
+		scanf("%d",&n);
+		if (n == 0){
+			printf("0\n");
+			continue;
+		}
+		int p = 0;
+		while(Pow(10,p) <= n){
+			p++;
+		}
+		while(p > 0){
+			int t = n / Pow(10,p-1);
+			printf("%d ",t);
+			n -= t * (int)Pow(10,p-1);
+			p--;
+
+		}
+		printf("\n");
+	}
+	return 0;
+}

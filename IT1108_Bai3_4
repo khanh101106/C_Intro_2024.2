@@ -1,0 +1,44 @@
+#include <stdio.h>
+#define FOR(i,l,r) for (int i=l;i<=r;i++)
+#define FOD(i,r,l) for (int i=r;i>=l;i--)
+#define faster ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
+#define vt vector
+#define ll long long
+#define pb push_back
+#define ii pair<int,int>
+#define mp make_pair
+#define fi first
+#define se second
+#define all(a) (a).begin(), (a).end()
+#define sz(a) (int)(a.size()) 
+//#define maxn 10000000
+int a[1001][1001];
+int dp[1001][1001];
+int min(int a,int b){
+	if (a >= b) return b;
+	else return a;
+}
+int main(){
+	int n,m;
+	scanf("%d%d",&n,&m);
+	FOR(i,1,n){
+		FOR(j,1,m){
+			scanf("%d",&a[i][j]);
+		}
+	}	
+	FOR(i,0,m){
+		dp[0][i] = 99999999;
+		dp[n + 1][i] = 99999999; 
+	}
+	FOR(j,1,m){
+		FOR(i,1,n){
+			dp[i][j] = min(dp[i][j-1],min(dp[i-1][j-1],dp[i+1][j-1])) + a[i][j];
+		}
+	}
+	int res = 999999999;
+	FOR(i,1,n){
+		res = min(res,dp[i][m]);
+	}
+	printf("%d\n",res);
+	return 0;
+}

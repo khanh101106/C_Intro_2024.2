@@ -1,0 +1,31 @@
+#include <stdio.h>
+#define FOR(i,l,r) for (int i=l;i<=r;i++)
+#define FOD(i,r,l) for (int i=r;i>=l;i--)
+#define faster ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
+#define vt vector
+#define ll long long
+#define pb push_back
+#define ii pair<int,int>
+#define mp make_pair
+#define fi first
+#define se second
+#define all(a) (a).begin(), (a).end()
+#define sz(a) (int)(a.size()) 
+//#define maxn 10000000
+int main(){
+	int a,b;
+	scanf("%d%d",&a,&b)	;
+	if (a < 0 && b >= 0){
+		printf("%d\n",a);
+	}
+	else if (a >= 0 && b < 0){
+		printf("%d\n",b);
+	}
+	else if (a < 0 && b < 0){
+		printf("%d\n",2 * a);
+	}
+	else{
+		printf("%d\n",a + b);
+	}
+	return 0;
+}

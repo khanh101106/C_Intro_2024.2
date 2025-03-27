@@ -1,0 +1,38 @@
+#include <stdio.h>
+#define FOR(i,l,r) for (int i=l;i<=r;i++)
+#define FOD(i,r,l) for (int i=r;i>=l;i--)
+#define faster ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
+#define vt vector
+#define ll long long
+#define pb push_back
+#define ii pair<int,int>
+#define mp make_pair
+#define fi first
+#define se second
+#define all(a) (a).begin(), (a).end()
+#define sz(a) (int)(a.size()) 
+#define inf 999999999
+#define maxn 100000
+int a[maxn];
+int main(){
+	int n;
+	scanf("%d",&n);
+	int M = -inf,m = -inf;
+	FOR(i,1,n){
+		scanf("%d",&a[i]);
+		if (a[i] > M){
+			m = M;
+			M = a[i];
+		}
+		else if (a[i] < M){
+			if (a[i] > m)
+				m = a[i];
+		}
+	}	
+	if (m == -inf){
+		printf("NOT FOUND\n");
+		return 0;
+	}
+	printf("%d\n",m);
+	return 0;
+}

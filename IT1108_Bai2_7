@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main() {
+    int x; 
+    int total_cost = 25000;
+
+    scanf("%d", &x);
+
+    if (x < 0) {
+        printf("ERROR\n");
+        return 0;
+    }
+
+    if (x > 0) {
+        if (x <= 50) {
+            total_cost += x * 600;
+        } else if (x <= 200) {
+            total_cost += 50 * 600 + (x - 50) * 400;
+        } else {
+            total_cost += 50 * 600 + 150 * 400 + (x - 200) * 200;
+        }
+    }
+    printf("%d\n", total_cost);
+
+    return 0;
+}

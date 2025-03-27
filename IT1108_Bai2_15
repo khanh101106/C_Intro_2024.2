@@ -1,0 +1,40 @@
+#include <stdio.h>
+#define FOR(i,l,r) for (int i=l;i<=r;i++)
+#define FOD(i,r,l) for (int i=r;i>=l;i--)
+#define faster ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
+#define vt vector
+#define ll long long
+#define pb push_back
+#define ii pair<int,int>
+#define mp make_pair
+#define fi first
+#define se second
+#define all(a) (a).begin(), (a).end()
+#define sz(a) (int)(a.size()) 
+#define maxn 10000000
+int a[maxn];
+int main(){
+	int n;
+	scanf("%d",&n);
+	int a = 0,b = 0,c = 0,d = 0;
+	FOR(i,1,n){
+		int t;
+		scanf("%d",&t);
+		if (t > 0){
+			c ++;
+		}
+		if (t < 0){
+			t = -t;
+			d ++;
+		}
+		if (t % 2 == 0)
+			a++;
+		else
+			b++;
+	}
+	printf("Even: %d\n",a);
+	printf("Odd: %d\n",b);
+	printf("Positive: %d\n",c);
+	printf("Negative: %d\n",d);
+	return 0;
+}
