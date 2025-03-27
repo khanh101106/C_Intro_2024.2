@@ -1,0 +1,21 @@
+#include <stdio.h>
+#define FOR(i,l,r) for (int i=l;i<=r;i++)
+#define FOD(i,r,l) for (int i=r;i>=l;i--)
+#define faster ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
+#define vt vector
+#define ll long long
+#define pb push_back
+#define ii pair<int,int>
+#define mp make_pair
+#define fi first
+#define se second
+#define all(a) (a).begin(), (a).end()
+#define sz(a) (int)(a.size())
+int main(){
+    //freopen("a.txt","r",stdin);
+    //freopen(".OUT","w",stdout)
+    double a,b,c;
+    scanf("%lf%lf%lf",&a,&b,&c);
+    printf("%lf\n",a * (b + b * c /100.0));
+    return 0;
+}
